@@ -22,3 +22,10 @@ npm install
 ```bash
 npm start 
 ```
+
+post /login  ---> for login
+post /signup ---> for signup
+post /update ---> for update in password
+
+naming convention for html elements is
+username,password,new_password
