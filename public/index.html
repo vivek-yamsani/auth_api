@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="localhost:3000/login" method="post" id="login-form">
+
+        <label for="us">
+            username:
+        </label><br>
+        <input type="email" required name="username" id="us">
+        <br>
+        <label for="ps">
+            password:
+        </label>
+        <br>
+        <input type="password" required name="password" id="ps">
+        <button type="submit" id="btn" >Login</button>
+
+    </form>
+</body>
+<script src="./index.js"></script>
+</html>

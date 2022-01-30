@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser');
+const cors = require('cors');
 var db = require('./db_connect.js');
 
 db.connect((err) => {
@@ -12,9 +13,19 @@ db.connect((err) => {
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cors({
+    origin: '*',
+    allowedHeaders: [
+        'Origin',
+        'X-Requested-With',
+        'Content-Type',
+        'Accept',
+        'Authorization'
+    ]
+}))
 
-app.post('/login', (req, result,) => {
-
+app.post('/login', (req, result) => {
     var mail = req.body.username;
     var pass = req.body.password;
     var stmt = 'SELECT * FROM `user_details` WHERE `mail`= ? AND `password`= MD5(?) ;';
